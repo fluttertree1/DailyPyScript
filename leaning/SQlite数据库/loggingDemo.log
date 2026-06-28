@@ -1,0 +1,10 @@
+2026-06-21 23:13:25,525 | 创建成功                                          |     3-1.py | 30 | INFO
+2026-06-21 23:13:25,525 | 插入失败：UNIQUE constraint failed: company.id     |     3-1.py | 39 | INFO
+2026-06-21 23:13:55,414 | 创建成功                                          |     3-1.py | 30 | INFO
+2026-06-21 23:13:55,416 | 插入失败：UNIQUE constraint failed: company.id     |     3-1.py | 39 | INFO
+2026-06-21 23:13:55,896 | 创建成功                                          |     3-1.py | 30 | INFO
+2026-06-21 23:13:55,896 | 插入失败：UNIQUE constraint failed: company.id     |     3-1.py | 39 | INFO
+2026-06-21 23:16:03,142 | 创建成功                                          |     3-1.py | 31 | INFO
+2026-06-21 23:16:03,142 | 插入失败：UNIQUE constraint failed: company.id     |     3-1.py | 40 | INFO
+2026-06-21 23:16:25,849 | 创建成功                                          |     3-1.py | 31 | INFO
+2026-06-21 23:16:25,850 | 插入失败：UNIQUE constraint failed: company.id     |     3-1.py | 40 | INFO
