@@ -11,14 +11,10 @@ def QiKe_TianPan(solar, HourGanZhi):  # 字符串
     index = []
     general = JIEQI[solar]
 
-    for dizhi in DIZHI:
-        for idx in range(len(DIZHI)):
-            if dizhi == general and DIZHI[idx] == general:
-                index.append(idx)
-    for dizhi in DIZHI:
-        for idx in range(len(DIZHI)):
-            if dizhi == HourGanZhi[1] and DIZHI[idx] == HourGanZhi[1]:
-                index.append(idx)
+    gidx = DIZHI.index(general)
+    index.append(gidx)
+    hidx = DIZHI.index(HourGanZhi[1])
+    index.append(hidx)
     # index[0] 月将  index[1] 时支
     if index[0] > index[1]:  # 月将位置比时支靠前
         diff = index[0] - index[1]
@@ -32,4 +28,53 @@ def QiKe_TianPan(solar, HourGanZhi):  # 字符串
         TianPan = DIZHI
         return TianPan
 
+
+def JiGong(day):
+    if day[0] == "甲":
+        GanJi = "寅"
+        return GanJi
+    if day[0] == "乙":
+        GanJi = "辰"
+        return GanJi
+    if day[0] == "丙":
+        GanJi = "巳"
+        return GanJi
+    if day[0] == "丁":
+        GanJi = "未"
+        return GanJi
+    if day[0] == "戊":
+        GanJi = "巳"
+        return GanJi
+    if day[0] == "己":
+        GanJi = "未"
+        return GanJi
+    if day[0] == "庚":
+        GanJi = "申"
+        return GanJi
+    if day[0] == "辛":
+        GanJi = "戌"
+        return GanJi
+    if day[0] == "壬":
+        GanJi = "亥"
+        return GanJi
+    if day[0] == "癸":
+        GanJi = "丑"
+        return GanJi
+
+
+def QiSiKe(day, TianPan):
+    GanJi = JiGong(day)
+
+    GanLandIdx = DIZHI.index(GanJi)
+    GanYang = TianPan[GanLandIdx]
+    GanYangIdx = DIZHI.index(GanYang)
+    GanYin = TianPan[GanYangIdx]
+
+    ZhiLandIdx = DIZHI.index(day[1])
+    ZhiYang = TianPan[ZhiLandIdx]
+    ZhiYangIdx = DIZHI.index(ZhiYang)
+    ZhiYin = TianPan[ZhiYangIdx]
+
+    return [[ZhiYin, ZhiYang, GanYin, GanYang],
+            [ZhiYang, day[1], GanYang, day[0]]]
 
