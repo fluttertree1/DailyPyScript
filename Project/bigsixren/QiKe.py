@@ -6,7 +6,8 @@ JIEQI = {  # 节气与月将对应表(简化版)
     '芒种': '戌', '夏至': '亥', '小暑': '子', '大暑': '丑'
 }
 
-
+# 天盘
+# 必须是两位字符串
 def QiKe_TianPan(solar, HourGanZhi):  # 字符串
     index = []
     general = JIEQI[solar]
@@ -28,7 +29,7 @@ def QiKe_TianPan(solar, HourGanZhi):  # 字符串
         TianPan = DIZHI
         return TianPan
 
-
+# 寄宫
 def JiGong(day):
     if day[0] == "甲":
         GanJi = "寅"
@@ -61,7 +62,7 @@ def JiGong(day):
         GanJi = "丑"
         return GanJi
 
-
+# 四课
 def QiSiKe(day, TianPan):
     GanJi = JiGong(day)
 
