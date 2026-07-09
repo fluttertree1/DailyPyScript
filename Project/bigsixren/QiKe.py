@@ -78,4 +78,3 @@ def QiSiKe(day, TianPan):
 
     return [[ZhiYin, ZhiYang, GanYin, GanYang],
             [ZhiYang, day[1], GanYang, day[0]]]
-
