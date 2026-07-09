@@ -234,6 +234,7 @@ class YinWater(Yin, Water):
         self.name = name
         super().__init__()
 
+
 Yang_swood = YangWood("甲")  #s = sky 天干
 Yin_swood = YinWood("乙")
 Yang_lwood = YangWood("寅")  # l = land 地支
@@ -248,8 +249,8 @@ Yang_ssoil = YangSoil("戊")
 Yin_ssoil = YinSoil("己")
 Yang_lsoilChen = YangSoil("辰")
 Yang_lsoilXu = YangSoil("戌")
-Yin_lsoilChou = YangSoil("丑")
-Yin_lsoilWei = YangSoil("未")
+Yin_lsoilChou = YinSoil("丑")
+Yin_lsoilWei = YinSoil("未")
 
 Yang_smetal = YangMetal("庚")
 Yin_smetal = YinMetal("辛")
@@ -425,7 +426,7 @@ def ZeiKe():
                         Chu = SiKe[0][1]
                     elif name == '四课':
                         Chu = SiKe[0][0]
-                return SanChuanindex(Chu)
+            return SanChuanindex(Chu)
         # 贼的个数为大于等于2时，使用比用法
         if true_count == 2:
             # zeiname 为四课中的天盘
@@ -486,7 +487,7 @@ def ZeiKe():
                 for bol, name in sameshen:
                     if not bol:
                         SheHuiShangShen.append(name)
-                    return SheHuiBenJia(SheHuiShangShen, 0)
+                return SheHuiBenJia(SheHuiShangShen, 0)
             if samecondition.count(True) == 1:
                 for bol, name in sameshen:
                     if bol:
@@ -513,7 +514,7 @@ def ZeiKe():
                 for bol, name in sameshen:
                     if not bol:
                         SheHuiShangShen.append(name)
-                    return SheHuiBenJia(SheHuiShangShen, 0)
+                return SheHuiBenJia(SheHuiShangShen, 0)
             if samecondition.count(True) == 1:
                 for bol, name in sameshen:
                     if bol:
@@ -551,10 +552,10 @@ def ZeiKe():
                         Chu = SiKe[0][1]
                     elif name == '四课':
                         Chu = SiKe[0][0]
-                    return SanChuanindex(Chu)
+            return SanChuanindex(Chu)
         if true_kecount == 2:
             kename = []
-            for true_condition_name in true_conditions:
+            for true_condition_name in true_kecondition:
                 if true_condition_name == '一课':
                     ke = SiKe[0][3]
                     kename.append(ke)
@@ -589,9 +590,9 @@ def ZeiKe():
                     classDict[kename[1]].property != classDict[GanJi].property:
                 shenls = [kename[0], kename[1]]
                 return SheHuiBenJia(shenls, 0)
-        if true_count == 3:
+        if true_kecount == 3:
             kename = []
-            for true_condition_name in true_conditions:
+            for true_condition_name in true_kecondition:
                 if true_condition_name == '一课':
                     zei = SiKe[0][3]
                     kename.append(zei)
@@ -611,7 +612,7 @@ def ZeiKe():
                 for bol, name in sameshen:
                     if not bol:
                         SheHuiShangShen.append(name)
-                    return SheHuiBenJia(SheHuiShangShen, 0)
+                return SheHuiBenJia(SheHuiShangShen, 0)
             if samecondition.count(True) == 1:
                 for bol, name in sameshen:
                     if bol:
@@ -629,7 +630,7 @@ def ZeiKe():
                     if bol:
                         SheHuiShangShen.append(name)
                 return SheHuiBenJia(SheHuiShangShen, 0)
-        if true_count == 4:
+        if true_kecount == 4:
             kename = [SiKe[0][3 - i] for i in range(4)]
             samecondition = [classDict[name].property == classDict[GanJi].property for name in kename]
             sameshen = zip(samecondition, kename)
@@ -638,7 +639,7 @@ def ZeiKe():
                 for bol, name in sameshen:
                     if not bol:
                         SheHuiShangShen.append(name)
-                    return SheHuiBenJia(SheHuiShangShen, 0)
+                return SheHuiBenJia(SheHuiShangShen, 0)
             if samecondition.count(True) == 1:
                 for bol, name in sameshen:
                     if bol:
@@ -676,7 +677,7 @@ def ZeiKe():
                         Chu = SiKe[0][1]
                     elif name == '四课':
                         Chu = SiKe[0][0]
-                return SanChuanindex(Chu)
+            return SanChuanindex(Chu)
         # 贼的个数为大于等于2时，使用比用法
         if true_count == 2:
             # zeiname 为四课中的天盘
@@ -737,7 +738,7 @@ def ZeiKe():
                 for bol, name in sameshen:
                     if not bol:
                         SheHuiShangShen.append(name)
-                    return SheHuiBenJia(SheHuiShangShen, 0)
+                return SheHuiBenJia(SheHuiShangShen, 0)
             if samecondition.count(True) == 1:
                 for bol, name in sameshen:
                     if bol:
@@ -764,7 +765,7 @@ def ZeiKe():
                 for bol, name in sameshen:
                     if not bol:
                         SheHuiShangShen.append(name)
-                    return SheHuiBenJia(SheHuiShangShen, 0)
+                return SheHuiBenJia(SheHuiShangShen, 0)
             if samecondition.count(True) == 1:
                 for bol, name in sameshen:
                     if bol:
@@ -795,25 +796,34 @@ def JiuZongMen():
         logger.info(f"出错：{e}")
 
 
-
-# for day in SIXTYJIAZI[:10:]:
-#     for solar in JIEQI.keys():
-#         TianPan = QiKe_TianPan(solar, day)
-#         print(TianPan)
-#         print(QiSiKe(day, TianPan))
-#         print(JiuZongMen())
+#
+for day in SIXTYJIAZI[::]:
+    for solar in JIEQI.keys():
+        TianPan = QiKe_TianPan(solar, day)
+        print(TianPan)
+        print(QiSiKe(day, TianPan)[0])
+        print(QiSiKe(day, TianPan)[1])
+        print(JiuZongMen())
 
 # 打印出四课
-day = "甲子"
-hour = "更子"
-TianPan = QiKe_TianPan("清明", hour)  # 天盘月将加时
-print(TianPan)
-print(QiSiKe(day, TianPan)[0])  # 四课要天干支
-print(QiSiKe(day, TianPan)[1])
-print(JiuZongMen())
+# day = "甲子"
+# hour = "更子"
+# for solar in JIEQI.keys():
+#     TianPan = QiKe_TianPan(solar, hour)  # 天盘月将加时
+#     print(TianPan)
+#     print(QiSiKe(day, TianPan)[0])  # 四课要天干支
+#     print(QiSiKe(day, TianPan)[1])
+#     print(JiuZongMen())
 # 打印三传
 
-
+# day = "甲子"
+# hour = "更子"
+#
+# TianPan = QiKe_TianPan("惊蛰", hour)  # 天盘月将加时
+# print(TianPan)
+# print(QiSiKe(day, TianPan)[0])  # 四课要天干支
+# print(QiSiKe(day, TianPan)[1])
+# print(JiuZongMen())
 # 比用法
 # 涉害法
 # 蒿失法
